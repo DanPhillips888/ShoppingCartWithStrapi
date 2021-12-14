@@ -1,5 +1,4 @@
 // simulate getting products from DataBase
-// !! should be able to remove this and just get initial cart from API
 const products = 
 [ 
   { name: "Apples_:", country: "Italy", cost: 3, instock: 10 },
