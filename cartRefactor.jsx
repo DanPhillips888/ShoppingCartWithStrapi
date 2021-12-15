@@ -173,18 +173,10 @@ const Products = (props) => {
     }
     if (cart[delIndex].numberInCart > 1) {
       //reduce item in cart by one and add back to instock
-      let newCart = cart.filter((item, i) => delIndex != i);
-      let target = cart.filter((item, index) => delIndex ==index);
-      let newItem = items.map((item, index) => {
-        if (item.name == target[0].name) {
-          item.instock++;
-          item.numberInCart--;
-          return item;
-        }
-      });
-      setCart(newCart, newItem);
-      setItems(newItem);
-      console.log(`item reduced in cart ${cart[delIndex].name}`);
+      cart[delIndex].instock++;
+      cart[delIndex].numberInCart--;
+      setCart(cart);
+      //setItems(cart[delIndex]);
       return;
     }
   };
