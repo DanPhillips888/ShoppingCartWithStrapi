@@ -14,4 +14,4 @@ Delete button on items in cart now works as intended changing the instock and in
 The checkout total has been adjusted to work with new cart format and keep a running total.
 
 Further implementation being worked on is to remove the hard coded starting products and just use the 
-strapi database entries.
+strapi database entries. And have the restock function add to current items in list rather than add new ones.
