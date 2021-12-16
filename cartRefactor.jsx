@@ -155,7 +155,7 @@ const Products = (props) => {
       let newItems = items.map((item, index) => {
         if (item.name == target[0].name) {
 	  item.instock++;
-		item.numberInCart--;
+	  item.numberInCart--;
 	}
         return item;
       });
@@ -176,7 +176,6 @@ const Products = (props) => {
       setCart([...cart]);
     }  
     return;
-    }
   };
 
   // const photos = ["apple.png", "orange.png", "beans.png", "cabbage.png"];
