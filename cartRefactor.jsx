@@ -153,7 +153,10 @@ const Products = (props) => {
       let newCart = cart.filter((item, i) => delIndex != i);
       let target = cart.filter((item, index) => delIndex ==index);
       let newItems = items.map((item, index) => {
-        if (item.name == target[0].name) item.instock++;
+        if (item.name == target[0].name) {
+	  item.instock++;
+		item.numberInCart--;
+	}
         return item;
       });
       setCart(newCart);
