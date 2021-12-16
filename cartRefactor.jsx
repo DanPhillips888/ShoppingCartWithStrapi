@@ -172,12 +172,17 @@ const Products = (props) => {
       return;
     }
     if (cart[delIndex].numberInCart > 1) {
-      //reduce item in cart by one and add back to instock
-      cart[delIndex].instock++;
-      cart[delIndex].numberInCart--;
-      setCart(cart);
-      //setItems(cart[delIndex]);
-      return;
+      let itemsInCart = [...cart];
+      let target = itemsInCart[delIndex];
+      let updateItem = (target) => {
+        target.instock++
+        target.numberInCart--;
+      }
+      updateItem(target);
+      console.log(`item removed ${target}`);
+      setCart([...cart]);
+    }  
+    return;
     }
   };
 
