@@ -68,8 +68,6 @@ const dataFetchReducer = (state, action) => {
   }
 };
 
-
-
 const Products = (props) => {
   const [items, setItems] = React.useState(products);
   const [cart, setCart] = React.useState([]);
@@ -117,7 +115,7 @@ const Products = (props) => {
     function itemInCart() {
       let allItemsInCart = [...cart];
       for (let i=0; i <= allItemsInCart.length -1; i++) {
-        // end of loop reached (check complex criteria first)
+        // end of loop reached with no match, add new item
         if (allItemsInCart[i].name !== item[0].name && i === allItemsInCart.length-1) {
           item[0].instock--;
           item[0].numberInCart++;
@@ -224,8 +222,7 @@ const Products = (props) => {
     let final = cart.map((item, index) => {
       return (
         <div key={index} index={index}>
-          {/* add a total in cart once items list is condensed */}
-          {item.name} 
+          {item.name} {item.numberInCart}
         </div>
       );
     });
