@@ -241,12 +241,12 @@ const Products = (props) => {
   };
 
   const checkOut = () => {
-    // fix checkout by adjusting costs to be (item.cost * numberInCart) once tracking number of items in cart as object element
-    let costs = cart.map((item) => item.cost);
-    //console.log(costs);
-    const reducer = (accum, current) => accum + current;
-    let newTotal = costs.reduce(reducer, 0);
-    console.log(`total updated to ${newTotal}`);
+    let itemsInCart = [...cart];
+    let newTotal = 0;
+    for (let i=0; i <= itemsInCart.length -1; i++) {
+      let costItem = itemsInCart[i].cost * itemsInCart[i].numberInCart;
+      newTotal += costItem;
+    }
     return newTotal;
   };
   
