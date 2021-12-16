@@ -179,7 +179,7 @@ const Products = (props) => {
         target.numberInCart--;
       }
       updateItem(target);
-      console.log(`item removed ${target}`);
+      console.log(`item removed ${target.name}`);
       setCart([...cart]);
     }  
     return;
