@@ -244,8 +244,8 @@ const Products = (props) => {
   const restockProducts = (url) => {
     doFetch(url);
     let newItems = data.map((item) => {
-      let { name, country, cost, instock } = item;
-      return {name, country, cost, instock};
+      let { name, country, cost, instock, numberInCart} = item;
+      return {name, country, cost, instock, numberInCart};
     });
     setItems([...items, ...newItems]);
   };
